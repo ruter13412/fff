@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Connecting…</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    height:100dvh;
+    background:#08070C;
+    color:#F3F1F8;
+    font-family:"Helvetica Neue",Inter,system-ui,-apple-system,sans-serif;
+    display:flex;flex-direction:column;
+    align-items:center;justify-content:center;
+    gap:22px;padding:24px;text-align:center;
+  }
+  .spinner{
+    width:38px;height:38px;border-radius:50%;
+    border:2.5px solid rgba(124,92,255,.22);
+    border-top-color:#7C5CFF;
+    animation:spin .8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  p{
+    font-size:14.5px;font-weight:600;line-height:1.5;
+    max-width:280px;
+  }
+  a{
+    font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
+    font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+    color:#877F9C;text-decoration:underline;
+  }
+  @media (prefers-reduced-motion:reduce){.spinner{animation-duration:2s;}}
+</style>
+</head>
+<body>
+
+  <div class="spinner"></div>
+  <p>Connecting to the private server… Please wait.</p>
+  <a id="manual" href="https://t.me/+4xj3hVepVvI4OGVk">Tap here if nothing happens</a>
+
+<script>
+  var GROUP_URL = "https://t.me/+4xj3hVepVvI4OGVk";
+  document.getElementById("manual").href = GROUP_URL;
+  // Pequeno atraso para o spinner ser visível antes de sair da página.
+  setTimeout(function(){ window.location.href = GROUP_URL; }, 550);
+</script>
+
+</body>
+</html>
